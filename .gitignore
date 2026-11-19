@@ -17,3 +17,5 @@ media/
 # IDE
 .vscode/
 .idea/
+.vercel
+.env*
