@@ -2,8 +2,16 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "development-only-change-this-before-deployment"
-DEBUG = True
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0", "testserver", ".sg2.manus.computer"]
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '0.0.0.0',
+    'testserver',
+    '.sg2.manus.computer',
+    'jannagentshostel.vercel.app',
+    '.vercel.app',
+]
 CSRF_TRUSTED_ORIGINS = ["https://*.sg2.manus.computer"]
 
 INSTALLED_APPS = [
